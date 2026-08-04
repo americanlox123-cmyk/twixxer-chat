@@ -30,13 +30,12 @@ function verifyPassword(password, stored) {
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server, {
+const io = require("socket.io")(server, {
   cors: {
-    origin: "*",
+    origin: "*", // Разрешает подключения с любых сайтов (включая Netlify)
     methods: ["GET", "POST"]
   }
 });
-
 app.use(express.static('public'));
 app.use('/node_modules/@timephy/rnnoise-wasm', express.static(
   require('path').join(__dirname, 'node_modules', '@timephy', 'rnnoise-wasm', 'dist')

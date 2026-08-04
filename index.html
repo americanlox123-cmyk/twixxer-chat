@@ -1835,7 +1835,7 @@
         </div>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     <script>
         (function() {
             // Мгновенная проверка кэша на старте (убирает мигание формы входа)
@@ -1860,7 +1860,7 @@
                 loginOverlay.style.display = 'flex';
             }
             
-            const socket = io({ 
+            const socket = io("https://twixxer657-twixxer-chat.hf.space/");{ 
                 transports: ['polling', 'websocket'] 
             });
 
